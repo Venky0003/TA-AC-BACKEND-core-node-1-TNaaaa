@@ -11,7 +11,8 @@ function handleRequest(req, res) {
     res.setHeader('Content-Type', 'text/html');
     res.end('<h2>this is all about NodeJS</h2>');
   } else if (req.method === 'POST' && req.url === '/about') {
-    res.end('message: this is a post request');
+    res.setHeader('Content-Type', 'application/json');
+    res.end('{message: this is a post request}');
   } else {
     res.writeHead(404, { 'Content-Type': 'text/Html' });
     res.end('<h2>Page not Found </h2>');
